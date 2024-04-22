@@ -10,7 +10,7 @@ def main():
 
     # Get user preferences
     research_interests = st.text_input('What are your research interests?')
-    sub_field = st.text_input('Specify any sub-field or technology you are particularly interested in:')
+    # sub_field = st.text_input('Specify any sub-field or technology you are particularly interested in:')
     university_attributes = st.selectbox('Select preferred attributes for universities:', ['High research activity', 'Strong industry connections', 'Internationally renowned', 'Small cohort sizes'])
 
     preferred_location = st.selectbox('Preferred location for graduate studies?', 
@@ -23,7 +23,7 @@ def main():
     if st.button('Get Recommendations'):
         if research_interests and field_of_study:
             # Enhanced query with more detail
-            query = f"Please provide detailed information about {degree_type} programs in {field_of_study}, with a specific focus on {research_interests}. I am particularly interested in programs that excel in areas such as {sub_field}. I am looking at universities located in {preferred_location}, preferably those known for {university_attributes} in the field of {field_of_study}. Additional considerations include {other_preferences}. Please also provide information about the program duration, tuition, and notable alumni."
+            query = f"Please provide detailed information about {degree_type} programs in {field_of_study}, with a specific focus on {research_interests}. I am particularly interested in programs that excel in areas such as {research_interests}. I am looking at universities located in {preferred_location}, preferably those known for {university_attributes} in the field of {field_of_study}. Additional considerations include {other_preferences}. Please also provide information about the program duration, tuition (only if it offers a master's program), and notable alumni."
 
             chat_completion = client.chat.completions.create(
                 messages=[{"role": "user", "content": query}],
