@@ -6,8 +6,8 @@ from groq import Groq
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 def main():
-    st.title('Graduate School Recommendation App')
-    st.subheader('Please note that some of the info may be inaccurate as this is running of Lllame 3 70B')
+    st.title('Graduate School Recommendations')
+    st.subheader('Please note that some of the info may be inaccurate as this is running of Llama 3 70B')
 
     # Get user preferences
     research_interests = st.text_input('What are your research interests?')
